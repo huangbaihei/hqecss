@@ -31,7 +31,7 @@ header{
 	height: 40px;
 	line-height: 40px;
 }
-@media screen and (max-width: 767px){
+@media screen and (max-width: 991px){
 	header .right-nav{
 		padding-left: 0;
 	}
@@ -44,7 +44,7 @@ header .right-nav ul{
 	float: right;
 	margin: 0;
 }
-@media screen and (max-width: 767px){
+@media screen and (max-width: 991px){
 	header .right-nav ul{
 		padding: 0
 	}
@@ -67,7 +67,7 @@ header .right-nav ul>li:hover{
 	padding:0 28px;
 	background: #fff;
 }
-@media screen and (max-width: 767px){
+@media screen and (max-width: 991px){
 	header .right-nav ul>li:hover{
 	padding: 0;
 	background: #fff;
@@ -100,7 +100,7 @@ header .right-nav ul>li:hover>a{
 .top-nav-box .navbar-default .navbar-nav > li:last-child{
 	padding-right: 0;
 }
-@media screen and (max-width: 767px) {
+@media screen and (max-width: 991px) {
 	.top-nav-box .navbar-default .navbar-nav > li{
 	padding: 5px 30px;
 }
@@ -118,7 +118,7 @@ header .right-nav ul>li:hover>a{
 	border-radius: 4px;
 	box-shadow: 1px 1px 1px 1px #e6e6e6;
 }
-@media screen and (max-width: 767px) {
+@media screen and (max-width: 991px) {
 	.top-nav-box .navbar-default .navbar-nav > li > a
 	{
 		text-align: center;
@@ -236,7 +236,7 @@ header .right-nav ul>li:hover>a{
 	font-size: 1.8rem;
 	color: #cccccc;
 }
-@media screen and (max-width: 767px){
+@media screen and (max-width: 991px){
 	.step p{
 		font-size: 1.2rem;
 	}
@@ -275,26 +275,44 @@ header .right-nav ul>li:hover>a{
 	display: flex;
 	justify-content: space-between;
 	background: #fbfcff;
+	border: 2px solid #e8e8e8;
+	/*border-top: 0;*/
+}
+@media screen and (max-width: 991px){
+	.guide-body{
+		flex-direction: column;
+	}
 }
 input[type="radio"]{
 	display: none;
 }
-.box-type{
+.choice{
 	display: flex;
 	padding-left: 35px;
 	
 }
-.box-type .icon{
+@media screen and (max-width: 991px){
+	.choice{
+		flex-direction: column;
+	}
+}
+@media screen and (max-width: 991px){
+	.choice>*{
+		display: flex;
+		justify-content: center;
+	}
+}
+.choice .icon{
 	display: inline-block;
 	width: 18px;
 	height: 18px;
 	border-radius: 9px;
 	border: 2px solid #d6d6d6;
 }
-.box-type input[type="radio"]:checked+.icon{
+.choice input[type="radio"]:checked+.icon{
 	border: 7px solid #1d7ad9;
 }
-.box-type label{
+.choice label{
 	display: flex;
 	align-items: center;
 	margin: 35px 60px 35px 0;
@@ -303,7 +321,7 @@ input[type="radio"]{
 	height: 18px;
 	line-height: 18px;
 }
-.box-type span:last-child{
+.choice span:last-child{
 	margin-left: 20px;
 }
 .drop-down{
@@ -314,6 +332,16 @@ input[type="radio"]{
 	color: #999999;
 	font-size: 1.4rem;
 }
+@media screen and (max-width: 991px){
+	.drop-down{
+		top: 0;
+	left: 50%;
+	margin-left: -70px;
+	margin-bottom: 35px;
+	margin-top: 35px;
+}
+}
+
 .drop-down div:first-child{
 	display: flex;
 	justify-content: space-between;
@@ -331,6 +359,7 @@ input[type="radio"]{
 	margin: 0;
 	position: absolute;
 	z-index: 999999;
+	background: #fff;
 	width: 125px;
 }
 .drop-down ul>li{
@@ -346,4 +375,165 @@ input[type="radio"]{
 	display: block;
 }
 /*选择箱型结束*/
+/*确定尺寸开始*/
+.size-choice{
+	flex-direction: column;
+}
+.size-choice div{
+	display: flex;
+}
+input[type="text"]{
+	width: 70px;
+	height: 30px;
+	border: 2px solid #e8e8e8;
+	background: #fbfcff;
+	outline: none;
+	margin: 0 5px;
+}
+.size-choice div:last-child{
+	margin-top: -35px;
+}
+@media screen and (max-width: 991px){
+	.size-choice div:last-child{
+	margin-top: 0;
+}
+}
+.size-choice .special{
+	margin-left: 0 !important;
+}
+.size-choice+.drop-down{
+	top: 50px;
+}
+@media screen and (max-width: 991px){
+	.size-choice+.drop-down{
+	top: 0;
+}
+}
+@media screen and (max-width: 991px){
+	.size-choice div{
+	flex-direction: column;
+   }
+.size-choice div>*{
+	justify-content: center;
+}
+
+}
+/*确定尺寸结束*/
+/*选择材质开始*/
+@media screen and (min-width: 992px){
+	.material-choice label{
+	margin-right: 15px;
+}
+.material-choice span:last-child{
+	margin-left: 10px;
+}
+}
+/*选择材质结束*/
+/*主体下导航开始*/
+.next-btn{
+	display: flex;
+	justify-content: center;
+	padding: 140px 0 95px 0;
+	background: #fff;
+	border: 2px solid #e8e8e8;
+	border-top: 0;
+}
+.next-btn a{
+	padding: 10px 52px;
+	border-radius: 2px;
+	background: #e15053;
+	font-size: 2.4rem;
+	color: #fff;
+	font-weight: 700;
+
+}
+/*主体下导航结束*/
 /*主体结束*/
+/*底部开始*/
+footer{
+	margin-top: 55px;
+	background: #f9f9f9;
+}
+footer .left p{
+	margin: 68px 0 120px 0;
+	font-size: 1.8rem;
+	color: #999999;
+	font-weight: 500;
+}
+@media screen and (max-width: 991px){
+	footer .left p{
+		margin: 30px 0 30px 0;
+	}
+}
+footer .center{
+	padding: 70px 15px 80px 15px;
+}
+@media screen and (max-width: 991px){
+	footer .center{
+	padding: 30px 15px 30px 15px;
+}
+}
+footer .center span{
+	margin-right: 40px;
+}
+footer .center span:last-child{
+	margin-right: 0;
+}
+footer .center div{
+	margin: 0 auto 20px auto;
+	width: 254px;
+}
+@media screen and (max-width: 991px){
+	footer .center div{
+	margin: 0 0 20px 0;
+	width: 254px;
+}
+}
+footer .center span a{
+	font-size: 1.4rem;
+	color: #999999;
+	font-weight: 500;
+
+}
+footer .center span a:hover{
+	color: #1d7ad9;
+}
+footer .right{
+	display: flex;
+	justify-content: flex-end;
+	align-items: center;
+	height: 230px;
+}
+@media screen and (max-width: 991px){
+	footer .right{
+	display: flex;
+	justify-content: flex-start;
+	align-items: center;
+	height: 150px;
+	padding-bottom: 70px;
+	padding-top: 20px;
+}
+}
+footer .right div:last-child{
+	padding: 5px;
+	background: #fff;
+}
+footer .right div:first-child{
+	display: flex;
+	flex-direction: column;
+}
+footer .right span{
+	padding: 6px;
+	font-size: 1.4rem;
+	color: #999999;
+	font-weight: 500;
+}
+.footer-bottom{
+	text-align: center;
+	padding: 8px 15px;
+	background: #1d7ad9;
+	color: #fff;
+	font-size: 1.2rem;
+}
+
+/*底部结束*/

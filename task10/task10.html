@@ -103,75 +103,242 @@
         </div>
     </div>
     <!-- 选择箱型开始 -->
-        <div class="container">
-            <div class="row">
-                <div class="col-xs-12">
-                    <div class="guide-title">
-                        <img src="images/xiangzi.jpg">
-                        <span>选择箱型</span>
-                    </div>
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12">
+                <div class="guide-title">
+                    <img src="images/xiangzi.jpg">
+                    <span>选择箱型</span>
                 </div>
             </div>
-            <div class="row">
-                <div class="col-xs-12">
-                    <div class="guide-body">
-                        <div class="box-type">
-                            	<label for="type-1"> 
-                            	    <input type="radio" name="type" id="type-1">
-                            	    <span class="icon"></span>
-                            	    <span>对口箱</span>
-                            	</label>
-                            	<label for="type-2">
-                            	    <input type="radio" name="type" id="type-2">
-                            	    <span class="icon"></span>
-                            	    <span>飞机盒</span>
-                            	</label>
-                            	<label for="type-3">
-                            	    <input type="radio" name="type" id="type-3">
-                            	    <span class="icon"></span>
-                            	    <span>天地盖</span>
-                            	</label>
+        </div>
+        <div class="row">
+            <div class="col-xs-12">
+                <div class="guide-body">
+                    <div class="choice">
+                        <label for="type-1">
+                            <input type="radio" name="type" id="type-1">
+                            <span class="icon"></span>
+                            <span>对口箱</span>
+                        </label>
+                        <label for="type-2">
+                            <input type="radio" name="type" id="type-2">
+                            <span class="icon"></span>
+                            <span>飞机盒</span>
+                        </label>
+                        <label for="type-3">
+                            <input type="radio" name="type" id="type-3">
+                            <span class="icon"></span>
+                            <span>天地盖</span>
+                        </label>
+                    </div>
+                    <div class="drop-down">
+                        <div>
+                            <span>查看详情</span>
+                            <img src="images/xuanze.png">
                         </div>
-                        <div class="drop-down">
-                        	<div>
-                        		<span>查看详情</span>
-                        		<img src="images/xuanze.png">
-                        	</div>
-                        	<div class="drop-down-menu">
-                        		<ul>
-                        			<li>详情1</li>
-                        			<li>详情2</li>
-                        			<li>详情3</li>
-                        		</ul>
-                        	</div>
+                        <div class="drop-down-menu">
+                            <ul>
+                                <li>详情1</li>
+                                <li>详情2</li>
+                                <li>详情3</li>
+                            </ul>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-        <!-- 选择箱型结束 -->
-        <!-- 确定尺寸开始 -->
-         <div class="container">
-            <div class="row">
-                <div class="col-xs-12">
-                    <div class="guide-title">
-                        <img src="images/muban.jpg">
-                        <span>确定尺寸</span>
-                    </div>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-xs-12">
-                    
+    </div>
+    <!-- 选择箱型结束 -->
+    <!-- 确定尺寸开始 -->
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12">
+                <div class="guide-title size">
+                    <img src="images/muban.jpg">
+                    <span>确定尺寸</span>
                 </div>
             </div>
         </div>
-        <!-- 确定尺寸结束 -->
-        <!-- 主体结束 -->
-        <!-- 引入bootstrap框架js部分开始 -->
-        <script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
-        <script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-        <!-- 引入bootstrap框架js部分结束 -->
+        <div class="row">
+            <div class="col-xs-12">
+                <div class="guide-body">
+                    <div class="choice size-choice">
+                    	<div>
+                    	    <label for="outer-diameter">
+                    	        <input type="radio" name="diameter" id="outer-diameter">
+                    	        <span class="icon"></span>
+                    	        <span>外径</span>
+                    	    </label>
+                    	    <label>
+                    	    	<span>长</span>
+                    	    	<input type="text" name="length">
+                    	    	<span class="special">mm</span>
+                    	    </label>
+                    	    <label>
+                    	    	<span>宽</span>
+                    	    	<input type="text" name="width">
+                    	    	<span class="special">mm</span>
+                    	    </label>
+                    	    <label>
+                    	    	<span>高</span>
+                    	    	<input type="text" name="height">
+                    	    	<span class="special">mm</span>
+                    	    </label>
+                    	</div>
+                    	<div>
+                    	    <label for="inner-diameter">
+                    	        <input type="radio" name="diameter" id="inner-diameter">
+                    	        <span class="icon"></span>
+                    	        <span>内径</span>
+                    	    </label>
+                    	     <label>
+                    	    	<span>长</span>
+                    	    	<input type="text" name="length">
+                    	    	<span class="special">mm</span>
+                    	    </label>
+                    	    <label>
+                    	    	<span>宽</span>
+                    	    	<input type="text" name="width">
+                    	    	<span class="special">mm</span>
+                    	    </label>
+                    	    <label>
+                    	    	<span>高</span>
+                    	    	<input type="text" name="height">
+                    	    	<span class="special">mm</span>
+                    	    </label>
+                    	</div>
+
+                    </div>
+                     <div class="drop-down">
+                        <div>
+                            <span>查看详情</span>
+                            <img src="images/xuanze.png">
+                        </div>
+                        <div class="drop-down-menu">
+                            <ul>
+                                <li>详情1</li>
+                                <li>详情2</li>
+                                <li>详情3</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+    <!-- 确定尺寸结束 -->
+    <!-- 选择材质开始 -->
+     <div class="container">
+        <div class="row">
+            <div class="col-xs-12">
+                <div class="guide-title">
+                    <img src="images/xiangzi.jpg">
+                    <span>选择材质</span>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-12">
+                <div class="guide-body">
+                    <div class="choice material-choice">
+                        <label>
+                            <input type="radio" name="material" >
+                            <span class="icon"></span>
+                            <span>三层A瓦优质</span>
+                        </label>
+                        <label>
+                            <input type="radio" name="material">
+                            <span class="icon"></span>
+                            <span>三层A瓦优质</span>
+                        </label>
+                        <label>
+                            <input type="radio" name="material">
+                            <span class="icon"></span>
+                            <span>三层A瓦优质</span>
+                        </label>
+                        <label>
+                            <input type="radio" name="material">
+                            <span class="icon"></span>
+                            <span>三层A瓦优质</span>
+                        </label>
+                        <label>
+                            <input type="radio" name="material">
+                            <span class="icon"></span>
+                            <span>三层A瓦优质</span>
+                        </label>
+                    </div>
+                    <div class="drop-down">
+                        <div>
+                            <span>查看详情</span>
+                            <img src="images/xuanze.png">
+                        </div>
+                        <div class="drop-down-menu">
+                            <ul>
+                                <li>详情1</li>
+                                <li>详情2</li>
+                                <li>详情3</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- 选择材质结束 -->
+    <!-- 主体下导航开始 -->
+    <div class="container">
+    	<div class="row">
+    		<div class="col-xs-12">
+    			<div class="next-btn">
+    				<a href="###">下一步</a>
+    			</div>
+    		</div>
+    	</div>
+    </div>
+    <!-- 主体下导航结束 -->
+    <!-- 主体结束 -->
+	<!-- 底部开始 -->
+	<footer>
+		<div class="container">
+			<div class="row">
+				<div class="col-xs-12 col-md-4 left">
+					<p>51包装网— 纸箱包装首选服务平台</p>
+				</div>
+				<div class="col-xs-12 col-md-4 center">
+					<div>
+						<span><a href="###">关于我们</a></span>
+						<span><a href="###">配送流程</a></span>
+						<span><a href="###">联系我们</a></span>
+					</div>
+					<div>
+						<span><a href="###">下单指南</a></span>
+						<span><a href="###">媒体介绍</a></span>
+					</div>
+				</div>
+				<div class="col-xs-12 col-md-4 right">
+					<div>
+						<span>TEL：400-0000-000</span>
+						<span>企业QQ：123456789</span>
+						<span>微信号：XXXXXXX</span>
+					</div>
+					<div>
+						<img src="images/erweima.jpg">
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="footer-bottom">
+			
+			<span>北京五一包装科技有限公司Copyright ©2015&nbsp;&nbsp;&nbsp;&nbsp;51baozhuang.com015&nbsp;&nbsp;All rights reserved.&nbsp;&nbsp;京icp备99999999-1</span>
+		</div>
+	</footer>
+	<!-- 底部结束 -->
+    <!-- 引入bootstrap框架js部分开始 -->
+    <script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <!-- 引入bootstrap框架js部分结束 -->
 </body>
 
 </html>
