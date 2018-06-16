@@ -5,6 +5,7 @@
 header {
   @include box(100%, 40px);
   background: #29bde0;
+  @include b-b(#50c9e6);
   @include middle;
   @include jc-sb;
   padding: 0 12px;
@@ -28,7 +29,6 @@ header {
 /*页面蓝色部分开始*/
 .blue-part {
   margin-top: 40px;
-  @include b-t(#50c9e6);
   @include box(100%, auto);
   padding: 15px 45px 10px 45px;
   background: #29bde0;
