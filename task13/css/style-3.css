@@ -93,10 +93,12 @@ header {
         display: flex;
         justify-content: space-between;
         margin-top: 7px;
-        margin-bottom: 15px; }
+        margin-bottom: 14px; }
         .game-details .row ul li:first-child .day {
           font-size: 1.687rem;
-          color: #515151; }
+          color: #515151;
+          display: flex;
+          flex-direction: column-reverse; }
         .game-details .row ul li:first-child .time {
           font-size: 1.125rem;
           color: #d1d1d1;

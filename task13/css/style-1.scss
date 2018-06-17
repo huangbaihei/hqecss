@@ -2,18 +2,70 @@
 @import "global";
 
 body {
+  position: relative;
+  overflow-x: hidden;
   background: #f0f0f0;
+}
+
+input[type="checkbox"] {
+  display: none;
+}
+
+.sidebar-menu {
+  @include box(80vw, 100vh);
+  border-right: 5px solid #1fbade;
+  background: #fff;
+  position: fixed;
+  top: 0;
+
+  left: -80vw;
+  transition: left 500ms;
+  ul {
+    list-style: none;
+    li {
+      @include middle;
+      @include jc-sb;
+      @include box(auto, 45px);
+      @include b-b(#eaeaea);
+      @include text(1.5rem, #3ebfdf);
+      & > img {
+        margin-right: 27px;
+      }
+      span {
+        @include middle;
+        img {
+          margin: 0 16px;
+        }
+      }
+    }
+  }
+  #sidebar:checked ~ & {
+    left: 0;
+  }
 }
 
 /*头部开始*/
 header {
+  transition: transform 500ms;
   @include box(100%, 40px);
   background: #29bde0;
   @include middle;
   padding-left: 12px;
   @include p-t;
   img {
-    @include box(18px, 16px)
+    @include box(18px, 16px);
+  }
+  img:last-child {
+    display: none;
+  }
+  #sidebar:checked ~ & {
+    img:first-child {
+      display: none;
+    }
+    img:last-child {
+      display: block;
+    }
+    transform: translateX(80vw);
   }
 }
 
@@ -21,6 +73,7 @@ header {
 
 /*主体开始*/
 .last-game {
+  transition: transform 500ms;
   @include middle-center;
   @include box(88vw, 65px);
   @include border(#c9c9c9);
@@ -37,9 +90,13 @@ header {
     margin-top: 1px;
     right: 2.5vw;
   }
+  #sidebar:checked ~ & {
+    transform: translateX(80vw);
+  }
 }
 
 .nav-game {
+  transition: transform 500ms;
   @include box(88vw, auto);
   margin: 0 auto;
   margin-bottom: 35px;
@@ -91,6 +148,9 @@ header {
     .active {
       background: #69d1e9;
     }
+  }
+  #sidebar:checked ~ & {
+    transform: translateX(80vw);
   }
 }
 
