@@ -92,6 +92,7 @@ header {
     display: flex;
     justify-content: space-around; }
     .choice .row .item {
+      cursor: pointer;
       width: 21vw;
       height: 30.57vw; }
       .choice .row .item .content {

@@ -78,6 +78,7 @@ header {
     display: flex;
     justify-content: space-around;
     .item {
+      cursor: pointer;
       @include box(21vw, 30.57vw);
       .content {
         @include box(21vw, 21vw);

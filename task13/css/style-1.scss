@@ -52,21 +52,25 @@ header {
   @include middle;
   padding-left: 12px;
   @include p-t;
-  img {
-    @include box(18px, 16px);
-  }
-  img:last-child {
-    display: none;
-  }
-  #sidebar:checked ~ & {
-    img:first-child {
-      display: none;
+  label {
+    cursor: pointer;
+    img {
+      @include box(18px, 16px);
     }
     img:last-child {
-      display: block;
+      display: none;
     }
-    transform: translateX(80vw);
+    #sidebar:checked ~ & {
+      img:first-child {
+        display: none;
+      }
+      img:last-child {
+        display: block;
+      }
+      transform: translateX(80vw);
+    }
   }
+
 }
 
 /*头部结束*/
