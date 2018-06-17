@@ -56,19 +56,23 @@ header {
     cursor: pointer;
     img {
       @include box(18px, 16px);
+
     }
     img:last-child {
       display: none;
     }
-    #sidebar:checked ~ & {
+  }
+
+  #sidebar:checked ~ & {
+    label {
       img:first-child {
         display: none;
       }
       img:last-child {
         display: block;
       }
-      transform: translateX(80vw);
     }
+    transform: translateX(80vw);
   }
 
 }
