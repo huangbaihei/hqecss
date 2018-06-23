@@ -59,6 +59,9 @@
     background: #fff;
     margin: 2px 0;
     box-shadow: 0 0 2px 2px #ededed;
+    @include xs{
+      margin-top: 30px;
+    }
     .company-introduction-title{
       overflow: hidden;
       border-bottom: 2px solid #e6e6e6;
