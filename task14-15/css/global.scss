@@ -1,0 +1,521 @@
+@charset "UTF-8";
+
+//重置页面默认样式开始
+* {
+  margin: 0;
+  padding: 0;
+  font-weight: 400;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  font-size: 62.5%;
+}
+
+a,
+a:hover {
+  text-decoration: none;
+}
+
+//重置页面默认样式结束
+
+//提取三个页面都复用很多的样式属性开始
+
+//flex布局
+@mixin middle-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@mixin middle {
+  display: flex;
+  align-items: center;
+}
+
+@mixin center {
+  justify-content: center;
+}
+
+@mixin jc-sb {
+  justify-content: space-between;
+}
+
+@mixin jc-sa {
+  justify-content: space-around;
+}
+
+//盒子宽高
+@mixin box($width,$height) {
+  width: $width;
+  height: $height;
+}
+
+//边框
+@mixin border($border-color) {
+  border: 1px solid $border-color;
+}
+
+@mixin b-t($b-t-color) {
+  border-top: 1px solid $b-t-color;
+}
+
+@mixin b-r($b-r-color) {
+  border-right: 1px solid $b-r-color;
+}
+
+@mixin b-b($b-b-color) {
+  border-bottom: 1px solid $b-b-color;
+}
+
+@mixin b-l($b-l-color) {
+  border-left: 1px solid $b-l-color;
+}
+
+//字体样式
+@mixin text($size,$text-color) {
+  font-size: $size;
+  color: $text-color;
+}
+
+//头部和底部绝对定位
+@mixin p-t {
+  position: fixed;
+  top: 0;
+  z-index: 1;
+}
+
+@mixin p-b {
+  position: fixed;
+  bottom: 0;
+  z-index: 1;
+}
+
+//媒体查询
+@mixin xs {
+  @media screen and (max-width: 767px) {
+    @content;
+  }
+}
+
+@mixin sm {
+  @media screen and (min-width: 768px) and (max-width: 990px) {
+    @content;
+  }
+}
+
+@mixin md {
+  @media screen and (min-width: 991px) and (max-width: 1199px) {
+    @content;
+  }
+}
+
+@mixin lg {
+  @media screen and (min-width: 1200px) {
+    @content;
+  }
+}
+
+@mixin sm-lg {
+  @media screen and (min-width: 768px) {
+    @content;
+  }
+}
+
+@mixin md-lg {
+  @media screen and (min-width: 991px) {
+    @content;
+  }
+}
+
+//模拟bootstrap栅格布局
+
+.container {
+  overflow: hidden;
+  padding-left: 15px;
+  padding-right: 15px;
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%;
+  @include sm {
+    width: 750px;
+  }
+  @include md {
+    width: 970px;
+  }
+  @include lg {
+    width: 1170px;
+  }
+}
+
+.col-xs-12 {
+  float: left;
+  padding-left: 15px;
+  padding-right: 15px;
+  width: 100%;
+}
+
+.col-sm-6 {
+  @include sm {
+    float: left;
+    padding-left: 15px;
+    padding-right: 15px;
+    width: 50%;
+  }
+}
+
+.col-md-3 {
+  @include md-lg {
+    float: left;
+    padding-left: 15px;
+    padding-right: 15px;
+    width: 25%;
+  }
+}
+
+.col-md-4 {
+  @include md-lg {
+    float: left;
+    padding-left: 15px;
+    padding-right: 15px;
+    width: 33.333333%;
+  }
+}
+
+.col-md-20 {
+  @include md-lg {
+    float: left;
+    padding-left: 15px;
+    padding-right: 15px;
+    width: 20%;
+  }
+}
+
+.col-sm-4 {
+  @include sm-lg {
+    float: left;
+    padding-left: 15px;
+    padding-right: 15px;
+    width: 33.333333%;
+  }
+}
+
+.col-sm-3 {
+  @include sm-lg {
+    float: left;
+    padding-left: 15px;
+    padding-right: 15px;
+    width: 25%;
+  }
+}
+
+.col-sm-9 {
+  @include sm-lg {
+    float: left;
+    padding-left: 15px;
+    padding-right: 15px;
+    width: 75%;
+  }
+}
+
+//提取三个页面都复用很多的样式属性结束
+
+//头部（包含导航栏）
+header {
+  .header-top {
+    @include b-t(#bfe3d4);
+    background: #fff;
+    .container {
+      @include text(1.4rem, #29b078);
+      @include middle;
+      @include jc-sb;
+      height: 40px;
+      .header-top-nav {
+        @include middle;
+        a {
+          margin-left: 15px;
+          @include xs {
+            margin-left: 10px;
+          }
+        }
+      }
+    }
+  }
+  .header-bottom {
+    background-color: #29b078;
+    .container {
+      position: relative;
+      min-height: 60px;
+      @include middle;
+      @include jc-sb;
+      ul {
+        list-style: none;
+        @include middle;
+        li {
+          a {
+            @include text(1.6rem, #fff);
+            @include middle-center;
+            @include box(102px, 100px);
+            border-bottom: 4px solid #29b078;
+            &:hover {
+              border-bottom: 4px solid #fff;
+            }
+            @include xs {
+              @include box(100vw, 44px);
+            }
+          }
+        }
+        .active{
+          a{
+            border-bottom: 4px solid #fff;
+          }
+        }
+        @include xs {
+          flex-direction: column;
+          align-self: center;
+          display: none;
+        }
+      }
+      #sidebar-icon:checked ~ ul {
+        display: flex;
+      }
+      @include xs {
+        align-items: flex-start;
+        flex-direction: column;
+
+      }
+      & > a {
+        height: 60px;
+        @include middle;
+      }
+      #sidebar-icon {
+        display: none;
+      }
+      label {
+        position: absolute;
+        top: 11px;
+        right: 15px;
+        border-radius: 4px;
+        @include box(40px, 38px);
+        @include middle-center;
+        flex-direction: column;
+        span {
+          @include box(20px, 4px);
+          margin: 2px;
+          background: #888;
+        }
+        display: none;
+        @include xs {
+          display: flex;
+        }
+      }
+      #sidebar-icon:checked ~ label {
+        background: #fff;
+      }
+    }
+  }
+}
+
+//底部
+footer {
+  font-weight: 500;
+  background: #26a26f;
+  a {
+    &:hover {
+      border-bottom: 1px solid #fff;
+    }
+  }
+  .container {
+    .left-nav {
+      & > span {
+        display: block;
+        margin: 35px 0 65px 0;
+        @include text(1.6rem, #fff);
+      }
+      & > div {
+        margin-bottom: 33px;
+        @include text(1.4rem, #fff);
+        a {
+          @include text(1.4rem, #fff);
+        }
+      }
+    }
+    .center-nav {
+      & > span {
+        display: block;
+        margin: 35px 0 30px 0;
+        @include text(1.6rem, #fff);
+      }
+      & > div {
+        margin-bottom: 25px;
+        a {
+          margin-right: 30px;
+          @include text(1.4rem, #fff);
+        }
+      }
+    }
+    .right-nav {
+      & > span {
+        display: inline-block;
+        width: 96px;
+        margin-top: 35px;
+        text-align: center;
+        @include text(1.6rem, #fff);
+      }
+      h1 {
+        margin-top: 8px;
+      }
+      @include sm-lg {
+        text-align: center;
+      }
+    }
+  }
+  .footer-bottom {
+    padding: 8px 0 12px 0;
+    text-align: center;
+    border-top: 1px solid #32c086;
+    @include text(1.4rem, #fff);
+  }
+}
+
+//轮播图
+.slide {
+  position: relative;
+  width: 100%;
+  overflow-x: hidden;
+  input {
+    display: none;
+  }
+  .slide-img {
+    width: 300vw;
+    transition: all 500ms;
+    img {
+      width: 100vw;
+      float: left;
+    }
+  }
+  .circle {
+    position: absolute;
+    bottom: 1.12vw;
+    width: 100%;
+    @include middle-center;
+    label {
+      cursor: pointer;
+      display: block;
+      @include box(15px, 15px);
+      border-radius: 7.5px;
+      margin: 5px;
+      border: 1px solid #c4c3c7;
+    }
+  }
+  .arrow {
+    label {
+      display: none;
+      cursor: pointer;
+    }
+  }
+  input:nth-of-type(1):checked {
+    & ~ .slide-img {
+      margin-left: 0;
+    }
+    & ~ .circle {
+      label:nth-of-type(1) {
+        background: #29b078;
+      }
+    }
+    &~.arrow{
+      label:nth-of-type(3){
+        @include middle-center;
+        position: absolute;
+        top: 50%;
+        left: 15vw;
+        margin-top: -23px;
+      }
+    }
+    &~.arrow{
+      label:nth-of-type(5){
+        @include middle-center;
+        position: absolute;
+        top: 50%;
+        right: 15vw;
+        margin-top: -23px;
+      }
+    }
+  }
+  input:nth-of-type(2):checked {
+    & ~ .slide-img {
+      margin-left: -100vw;
+    }
+    & ~ .circle {
+      label:nth-of-type(2) {
+        background: #29b078;
+      }
+    }
+    &~.arrow{
+      label:nth-of-type(1){
+        @include middle-center;
+        position: absolute;
+        top: 50%;
+        left: 15vw;
+        margin-top: -23px;
+      }
+    }
+    &~.arrow{
+      label:nth-of-type(6){
+        @include middle-center;
+        position: absolute;
+        top: 50%;
+        right: 15vw;
+        margin-top: -23px;
+      }
+    }
+  }
+  input:nth-of-type(3):checked {
+    & ~ .slide-img {
+      margin-left: -200vw;
+    }
+    & ~ .circle {
+      label:nth-of-type(3) {
+        background: #29b078;
+      }
+    }
+    &~.arrow{
+      label:nth-of-type(2){
+        @include middle-center;
+        position: absolute;
+        top: 50%;
+        left: 15vw;
+        margin-top: -23px;
+      }
+    }
+    &~.arrow{
+      label:nth-of-type(4){
+        @include middle-center;
+        position: absolute;
+        top: 50%;
+        right: 15vw;
+        margin-top: -23px;
+      }
+    }
+  }
+}
+
+//面包屑导航
+.breadcrumb {
+  div {
+    padding: 30px 15px;
+    span:first-child {
+      @include text(1.6rem, #333);
+    }
+    span:last-child {
+      @include text(1.6rem, #29b078);
+    }
+  }
+}
+
+
+
+
+
+
